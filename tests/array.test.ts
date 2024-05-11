@@ -17,4 +17,16 @@ describe('Array', () => {
         // error jika ingin mengubah data array dengan type readonly
         // hobbies[0] = "badminton";
     })
+
+    it('should support tuple', () => {
+        const person: readonly [string, boolean, number] = ["Fadhil", false, 24];
+
+        console.info(person);
+        console.info(person[0]);
+        console.info(person[1]);
+        console.info(person[2]);
+
+        // error karena tuple juga bersifat readonly
+        // person[0] = "Jon";
+    });
 });
