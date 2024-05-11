@@ -6,4 +6,15 @@ describe('Array', () => {
         console.info(names);
         console.info(values)
     })
+
+    it('Should support read only array', () => {
+        const hobbies: ReadonlyArray<string> = ["reading", "watching"];
+
+        console.info(hobbies);
+        console.info(hobbies[0]);
+        console.info(hobbies[1]);
+
+        // error jika ingin mengubah data array dengan type readonly
+        // hobbies[0] = "badminton";
+    })
 });
