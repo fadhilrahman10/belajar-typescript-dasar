@@ -1,6 +1,6 @@
 describe('object', () => {
     it('should support in typescript', () => {
-        const person: {name: string; age: number} = {
+        const person: {name: string; age: number, hobbies?: string[]} = {
             name: "jon",
             age: 50
         };
