@@ -14,4 +14,13 @@ describe('Loop', () => {
             console.info(names[index]);
         }
     });
+
+    it('should support while loop', () => {
+        let count: number = 0;
+
+        while (count < 10) {
+            console.info(count);
+            count++;
+        }
+    });
 });
