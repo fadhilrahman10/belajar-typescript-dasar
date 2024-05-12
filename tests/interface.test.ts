@@ -23,4 +23,28 @@ describe('Interface', () => {
 
         expect(add(2, 2)).toBe(4);
     });
+
+    it('should support indexable interface', () => {
+        interface StringArray {
+            [index: number]: string;
+        }
+
+        const names: StringArray = ["Jon", "Doe"];
+
+        console.info(names);
+    });
+
+    it('should support indexable interface for non number index', () => {
+        interface StringDictionary {
+            [key: string]: string;
+        }
+
+        const dictionary: StringDictionary = {
+            "name": "Jon",
+            "address": "jl. jalan"
+        };
+
+        expect(dictionary['name']).toBe('Jon');
+        expect(dictionary['address']).toBe('jl. jalan');
+    })
 });
