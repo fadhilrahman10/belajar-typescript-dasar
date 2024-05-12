@@ -1,4 +1,5 @@
 import {Seller} from "../src/seller";
+import {Employee, Manager} from "../src/employee";
 
 describe('Interface', () => {
     it('should support in typescript', () => {
@@ -47,4 +48,23 @@ describe('Interface', () => {
         expect(dictionary['name']).toBe('Jon');
         expect(dictionary['address']).toBe('jl. jalan');
     })
+
+    it('should support extends interface', () => {
+        const employee: Employee = {
+            id: 1,
+            name: "Jon",
+            division: "IT"
+        };
+
+        console.info(employee);
+
+        const manager: Manager = {
+            id: 2,
+            name: "Doe",
+            division: "IT",
+            numberOfEmployee: 10
+        }
+
+        console.info(manager)
+    });
 });
