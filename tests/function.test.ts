@@ -64,4 +64,17 @@ describe('Function', () => {
         expect(callMe(10)).toBe(20);
         expect(callMe("Uppercase")).toBe("UPPERCASE");
     });
+
+    it('should support function as parameter', () => {
+        function sayHello(name: string, filter: (name: string) => string): string {
+            return `Hello ${filter(name)}`;
+        }
+
+        function toUpper(name: string) {
+            return name.toUpperCase();
+        }
+
+        expect(sayHello("Jon", toUpper)).toBe("Hello JON");
+
+    });
 });
