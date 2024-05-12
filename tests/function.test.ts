@@ -49,4 +49,19 @@ describe('Function', () => {
         expect(sayHello("Jon")).toBe("Hello Jon");
         expect(sayHello("Jon", "Doe")).toBe("Hello Jon Doe");
     });
+
+    it('should support function overloading', () => {
+        function callMe(value: number): number;
+        function callMe(value: string): string;
+        function callMe(value: any): any {
+            if (typeof value === 'string') {
+                return value.toUpperCase();
+            } else if (typeof value === 'number') {
+                return value * 2;
+            }
+        }
+
+        expect(callMe(10)).toBe(20);
+        expect(callMe("Uppercase")).toBe("UPPERCASE");
+    });
 });
