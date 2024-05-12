@@ -23,4 +23,13 @@ describe('Loop', () => {
             count++;
         }
     });
+
+    it('should support do while loop', () => {
+        let counter: number = 0;
+
+        do {
+            console.info(counter);
+            counter++;
+        } while (counter < 10)
+    });
 });
