@@ -12,4 +12,13 @@ describe('Function', () => {
 
         printHello("Doe");
     });
+
+    it('should support default value', () => {
+        function sayHello(name: string = "Guest"): string {
+            return `Hello ${name}`;
+        }
+
+        expect(sayHello()).toBe("Hello Guest");
+        expect(sayHello("Jon")).toBe("Hello Jon");
+    });
 });
