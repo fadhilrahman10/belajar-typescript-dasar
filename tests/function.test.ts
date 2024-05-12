@@ -76,5 +76,14 @@ describe('Function', () => {
 
         expect(sayHello("Jon", toUpper)).toBe("Hello JON");
 
+        // Anonymous function
+        expect(sayHello("Doe", function(value: string): string {
+            return value.toUpperCase();
+        })).toBe("Hello DOE");
+
+        // Arrow Function
+        expect(sayHello("Class", (value: string): string => value.toUpperCase()))
+            .toBe("Hello CLASS");
+
     });
 });
