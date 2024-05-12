@@ -34,4 +34,19 @@ describe('Function', () => {
 
         expect(sum(1, 2, 3, 4, 5)).toBe(15);
     });
+
+    it('should support optional parameter', () => {
+        function sayHello(firstName: string, lastName?: string): string {
+            let say: string = `Hello ${firstName}`;
+
+            if (lastName) {
+                say += ' ' + lastName;
+            }
+
+            return say;
+        }
+
+        expect(sayHello("Jon")).toBe("Hello Jon");
+        expect(sayHello("Jon", "Doe")).toBe("Hello Jon Doe");
+    });
 });
